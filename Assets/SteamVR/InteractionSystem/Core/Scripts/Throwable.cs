@@ -10,13 +10,11 @@ using System.Collections;
 
 namespace Valve.VR.InteractionSystem
 {
-    
-    //-------------------------------------------------------------------------
-    [RequireComponent( typeof( Interactable ) )]
+	//-------------------------------------------------------------------------
+	[RequireComponent( typeof( Interactable ) )]
 	[RequireComponent( typeof( Rigidbody ) )]
 	public class Throwable : MonoBehaviour
 	{
-        
 		[EnumFlags]
 		[Tooltip( "The flags used to attach this object to the hand." )]
 		public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.TurnOnKinematic;
@@ -50,13 +48,10 @@ namespace Valve.VR.InteractionSystem
         protected Vector3 attachPosition;
         protected Quaternion attachRotation;
         protected Transform attachEaseInTransform;
-       
 
 		public UnityEvent onPickUp;
         public UnityEvent onDetachFromHand;
         public HandEvent onHeldUpdate;
-
-        
 
 
         protected RigidbodyInterpolation hadInterpolation = RigidbodyInterpolation.None;
@@ -73,7 +68,7 @@ namespace Valve.VR.InteractionSystem
 			velocityEstimator = GetComponent<VelocityEstimator>();
             interactable = GetComponent<Interactable>();
 
-            
+
 
             rigidbody = GetComponent<Rigidbody>();
             rigidbody.maxAngularVelocity = 50.0f;
@@ -89,7 +84,7 @@ namespace Valve.VR.InteractionSystem
 
 
         //-------------------------------------------------
-        public virtual void OnHandHoverBegin( Hand hand )
+        protected virtual void OnHandHoverBegin( Hand hand )
 		{
 			bool showHint = false;
 
@@ -127,7 +122,7 @@ namespace Valve.VR.InteractionSystem
 
 
         //-------------------------------------------------
-        public virtual void HandHoverUpdate( Hand hand )
+        protected virtual void HandHoverUpdate( Hand hand )
         {
             GrabTypes startingGrabType = hand.GetGrabStarting();
 
@@ -239,8 +234,7 @@ namespace Valve.VR.InteractionSystem
 
             if (hand.IsGrabEnding(this.gameObject))
             {
-               
-               hand.DetachObject(gameObject, restoreOriginalParent);
+                hand.DetachObject(gameObject, restoreOriginalParent);
 
                 // Uncomment to detach ourselves late in the frame.
                 // This is so that any vehicles the player is attached to

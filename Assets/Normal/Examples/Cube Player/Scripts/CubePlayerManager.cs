@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using Normal.Realtime;
+﻿#if NORMCORE
+
+using UnityEngine;
 
 namespace Normal.Realtime.Examples {
     public class CubePlayerManager : MonoBehaviour {
@@ -24,3 +25,5 @@ namespace Normal.Realtime.Examples {
         }
     }
 }
+
+#endif
