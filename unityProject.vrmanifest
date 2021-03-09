@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.throwmenormcore.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\s0121586\\Downloads\\throw\\throwme-master\\Throwme-normcore\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\s0121586\\Documents\\VXR\\VXR1171\\multiplayer\\student\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Throwme-normcore [Testing]"
